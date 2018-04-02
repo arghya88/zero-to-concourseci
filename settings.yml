@@ -1,0 +1,11 @@
+---
+
+deployment_name: concourse
+web_network_vm_extension: lb
+external_url: "http://$external_url"
+network_name: private
+web_network_name: private
+web_vm_type: default
+db_vm_type: default
+worker_vm_type: default
+db_persistent_disk_type: 50GB
