@@ -17,6 +17,7 @@ The following should be installed on your local machine:
 * [bosh create-env dependencies](https://bosh.io/docs/cli-env-deps.html)
 * [terraform](https://www.terraform.io/downloads.html) >= 0.11.0
 * ruby (necessary for bosh create-env)
+* [direnv](https://direnv.net/)
 
 ## Install bosh-bootloader
 
@@ -29,6 +30,16 @@ $ brew tap cloudfoundry/tap
 $ brew install bosh-cli
 $ brew install bbl
 ```
+
+## Prepare your terminal environment
+
+In the `nonprod` directory:
+
+`cp .envrc-example .envrc` #ignore direnv at this stage when prompted
+
+Tune this file. It should be self explanitory.
+
+`direnv allow`
 
 ## Prepare an AWS VPC
 
