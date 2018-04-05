@@ -35,7 +35,9 @@ $ brew install bbl
 
 In the `nonprod` directory:
 
-`cp .envrc-example .envrc` #ignore direnv at this stage when prompted
+_ignore direnv at this stage when prompted_
+
+`cp .envrc-example .envrc`
 
 Tune this file. It should be self explanitory.
 
