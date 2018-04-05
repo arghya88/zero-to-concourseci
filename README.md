@@ -60,26 +60,20 @@ Get some downloads from Pivnet and place them in the archives directory.
   bosh upload-release ../artifacts/garden-runc-1.9.0.tgz
   bosh upload-stemcell ../artifacts/light-bosh-stemcell-3468.27-aws-xen-hvm-ubuntu-trusty-go_agent.tgz
 ```
-* Get a copy of the Concourse deployment repo
-  `git clone https://github.com/concourse/concourse-bosh-deployment.git`
-  `cd concourse-bosh-deployment/cluster`
-* Checkout v3.9.2
-  `git checkout v3.9.2`
-* Patch the deployment repo for Pivotal Concourse
-  `git apply ../../pivotal_concourse.diff`
-* Tune `settings.yml`
+
+* Tune `manifests/settings.yml`
 * Deploy concourse
 
 ```bash
-bosh deploy -d concourse concourse.yml \
-  -l ../versions.yml \
-  --vars-store=../../cluster-creds.yml \
-  --vars-file=../../settings.yml \
-  -o operations/privileged-http.yml \
-  -o operations/no-auth.yml \
-  -o operations/web-network-extension.yml
+bosh deploy -d concourse manifests/concourse.yml \
+  -l manifests/versions.yml \
+  --vars-store=cluster-creds.yml \
+  --vars-file=manifests/settings.yml \
+  -o manifests/operations/privileged-http.yml \
+  -o manifests/operations/no-auth.yml \
+  -o manifests/operations/web-network-extension.yml \
+  -o manifests/operations/worker-ephemeral-disk.yml
 ```
-
 
 
 ## NOTES
