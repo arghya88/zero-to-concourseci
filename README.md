@@ -80,7 +80,7 @@ Get some downloads from Pivnet and place them in the artifacts directory.
   ```
   * MacOS
   ```bash
-  export external_url="https://$(bbl lbs |awk -F':' '{print $2}' |sed 's/ //')"
+  export external_url="https://$(bbl lbs | awk -F':' '{print $2}' | awk -F'[' '{print $2}' | awk -F']' '{print $1}')"
   ```
 * Tune `manifests/settings.yml`
 * Deploy concourse
