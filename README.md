@@ -62,7 +62,7 @@ Update your terminal's environment variables that are needed so your environment
 
 We are now ready to deploy a Concourse CI to our director.  
 
-Get some downloads from Pivnet and place them in the archives directory.
+Get some downloads from Pivnet and place them in the artifacts directory.
 
 * grab concourse release from pivnet and check the sha256
 * grab garden-runc from pivnet and check the sha256
