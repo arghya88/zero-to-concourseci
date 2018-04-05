@@ -49,14 +49,16 @@ Update your terminal's environment variables that are needed so your environment
 
 We are now ready to deploy a Concourse CI to our director.  
 
+Get some downloads from Pivnet and place them in the archives directory.
+
 * grab concourse release from pivnet and check the sha256
 * grab garden-runc from pivnet and check the sha256
 * grab the latest AWS Stemcell from pivnet and check the sha256
 * upload to director
 ```bash
-  bosh upload-release artifacts/concourse-3.8.0.tgz
-  bosh upload-release artifacts/garden-runc-1.9.0.tgz
-  bosh upload-stemcell artifacts/light-bosh-stemcell-3468.27-aws-xen-hvm-ubuntu-trusty-go_agent.tgz
+  bosh upload-release ../artifacts/concourse-3.8.0.tgz
+  bosh upload-release ../artifacts/garden-runc-1.9.0.tgz
+  bosh upload-stemcell ../artifacts/light-bosh-stemcell-3468.27-aws-xen-hvm-ubuntu-trusty-go_agent.tgz
 ```
 * Get a copy of the Concourse deployment repo
   `git clone https://github.com/concourse/concourse-bosh-deployment.git`
