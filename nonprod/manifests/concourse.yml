@@ -4,11 +4,11 @@ name: ((deployment_name))
 releases:
 - name: concourse
   version: ((concourse_version))
-  sha1: ((concourse_sha1))
+  sha256: ((concourse_sha256))
   url: https://bosh.io/d/github.com/concourse/concourse?v=((concourse_version))
 - name: garden-runc
   version: ((garden_runc_version))
-  sha1: ((garden_runc_sha1))
+  sha256: ((garden_runc_sha256))
   url: https://bosh.io/d/github.com/cloudfoundry/garden-runc-release?v=((garden_runc_version))
 - name: postgres
   version: ((postgres_version))
