@@ -9,6 +9,9 @@
 * need to make sure you use legacy pivnet token otherwise `upload-ert` will fail
   to download
 * `bbl up` leaves a mess in your directory - raise an issue to have it in a temp directory - see https://github.com/aussielunix/zero-to-concourseci/blob/master/.gitignore
+* `bbl destroy`
+  * removes custom `vars/terraform.tfvars`
+  * 
 * make sure to add some ephemeral disk to concourse workers
   * https://github.com/pivotal-cf/go-pivnet/issues/19
   * set `worker_ephemeral_disk`: to `100GB_ephemeral_disk`
@@ -19,7 +22,7 @@
 * BBL_ENV_NAME is shared concourse for all platform instances
 * why is the BBLUP cidr so huge ?
   * it has to be a /20 or larger !
-
+* `vars/cloud-config-vars.yml` is left behind after `bbl destroy`
 
 ## credhub + uaa
 
