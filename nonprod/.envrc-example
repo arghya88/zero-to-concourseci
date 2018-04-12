@@ -18,4 +18,5 @@ export BBL_AWS_REGION="$AWS_REGION"
 if [[ -e 'bbl-state.json' ]]
 then
   eval "$(bbl print-env)"
+  export external_url="$(bbl lbs | awk -F':' '{print $2}' | awk -F'[' '{print $2}' | awk -F']' '{print $1}')"
 fi
