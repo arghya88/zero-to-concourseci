@@ -73,15 +73,6 @@ Get some downloads from Pivnet and place them in the artifacts directory.
   bosh upload-release ../artifacts/garden-runc-1.9.0.tgz
   bosh upload-stemcell ../artifacts/light-bosh-stemcell-3468.27-aws-xen-hvm-ubuntu-trusty-go_agent.tgz
 ```
-* set the external url
-  * linux
-  ```bash
-  export external_url="$(bbl lbs |awk -F':' '{print $2}' |sed 's/ //' | awk '{ print $2}' | awk -F '[\[\]]' '{print $2}')"
-  ```
-  * MacOS
-  ```bash
-  export external_url="https://$(bbl lbs | awk -F':' '{print $2}' | awk -F'[' '{print $2}' | awk -F']' '{print $1}')"
-  ```
 * Tune `manifests/settings.yml`
 * Deploy concourse
 
