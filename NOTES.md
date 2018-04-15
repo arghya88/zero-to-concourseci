@@ -29,4 +29,5 @@
 * get the credhub-cli from [github](https://github.com/cloudfoundry-incubator/credhub-cli/releases) or `brew install cloudfoundry/tap/credhub-cli`
 * get the uaa cli ??
 * read https://github.com/cloudfoundry-incubator/credhub/blob/master/docs/operator-quick-start.md#credhub-credential-types
-
+* read https://docs.cloudfoundry.org/credhub/setup-credhub-bosh.html
+* read https://docs.cloudfoundry.org/credhub/credential-types.html
