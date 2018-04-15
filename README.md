@@ -98,3 +98,8 @@ bosh deploy -d concourse manifests/concourse.yml \
 ```bash
 credhub get -n /bosh-directors-name/concourse/atc_basic_auth
 ```
+* remember to frequently rotate these credentials
+```bash
+credhub regenerate --name /bosh-directors-name/concourse/atc_basic_auth
+# and re-deploy concourse with the above bosh deploy...
+```
