@@ -73,20 +73,28 @@ Get some downloads from Pivnet and place them in the artifacts directory.
   bosh upload-release ../artifacts/garden-runc-1.9.0.tgz
   bosh upload-stemcell ../artifacts/light-bosh-stemcell-3468.27-aws-xen-hvm-ubuntu-trusty-go_agent.tgz
 ```
+Credentials in credhub are namespaced like `/boshdirectorname/deploymentname/credname`
+* find the bosh directors name
+```bash
+bbl outputs | grep director_name
+```
+* Generate some basic auth credentials for Concourse in Credhub.
+```bash
+credhub generate --type user --name /bosh-directors-name/concourse/atc_basic_auth
+```
 * Tune `manifests/settings.yml`
 * Deploy concourse
-
 ```bash
 bosh deploy -d concourse manifests/concourse.yml \
   -l manifests/versions.yml \
   --vars-store=cluster-creds.yml \
   --vars-file=manifests/settings.yml \
   -o manifests/operations/privileged-http.yml \
-  -o manifests/operations/no-auth.yml \
+  -o manifests/operations/basic-auth.yml \
   -o manifests/operations/web-network-extension.yml \
   -o manifests/operations/worker-ephemeral-disk.yml
 ```
-
-
-## NOTES
-
+* retrieve the Concourse credentials and log in.
+```bash
+credhub get -n /bosh-directors-name/concourse/atc_basic_auth
+```
