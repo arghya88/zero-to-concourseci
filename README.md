@@ -80,7 +80,7 @@ bbl outputs | grep director_name
 ```
 * Generate some basic auth credentials for Concourse in Credhub.
 ```bash
-credhub generate --type user --name /bosh-directors-name/concourse/atc_basic_auth
+credhub generate --type user --name /boshdirectorsname/concourse/atc_basic_auth
 ```
 * Tune `manifests/settings.yml`
 * Deploy concourse
@@ -96,10 +96,10 @@ bosh deploy -d concourse manifests/concourse.yml \
 ```
 * retrieve the Concourse credentials and log in.
 ```bash
-credhub get -n /bosh-directors-name/concourse/atc_basic_auth
+credhub get -n /boshdirectorsname/concourse/atc_basic_auth
 ```
 * remember to frequently rotate these credentials
 ```bash
-credhub regenerate --name /bosh-directors-name/concourse/atc_basic_auth
+credhub regenerate --name /boshdirectorsname/concourse/atc_basic_auth
 # and re-deploy concourse with the above bosh deploy...
 ```
