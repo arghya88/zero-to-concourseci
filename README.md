@@ -18,6 +18,7 @@ The following should be installed on your local machine:
 * [terraform](https://www.terraform.io/downloads.html) >= 0.11.0
 * ruby (necessary for bosh create-env)
 * [direnv](https://direnv.net/)
+* an AWS IAM user with a limited policy
 
 ## Install bosh-bootloader
 
@@ -42,6 +43,15 @@ _ignore direnv at this stage when prompted_
 Tune this file. It should be self explanitory.
 
 `direnv allow`
+
+## Create a bbl IAM user
+
+```bash
+cat ../iam/bbl-policy.json | xclip
+aws iam create-user --user-name "$(BBL_ENV_NAME)-bbl"
+aws iam put-user-policy --user-name "$(BBL_ENV_NAME)-bbl" --policy-name "$(BBL_ENV_NAME)-policy" --policy-document "$(xclip -o)"
+aws iam create-access-key --user-name "$(BBL_ENV_NAME)-bbl"
+```
 
 ## Prepare an AWS VPC
 
