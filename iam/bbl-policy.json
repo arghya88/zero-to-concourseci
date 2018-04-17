@@ -5,13 +5,14 @@
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
-                "iam:*",
-                "rds:*",
-                "s3:*",
-                "route53:*",
                 "ec2:*",
                 "elasticloadbalancing:*",
-                "logs:*"
+                "iam:*",
+                "kms:*",
+                "logs:*",
+                "rds:*",
+                "route53:*",
+                "s3:*"
             ],
             "Resource": "*"
         }
