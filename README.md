@@ -46,6 +46,9 @@ Tune this file. It should be self explanitory.
 
 ## Create a bbl IAM user
 
+    > Note: xclip is a Linux specific tool - on MacOS you should use pbcopy /
+    > pbpaste
+
 ```bash
 cat ../iam/bbl-policy.json | xclip
 aws iam create-user --user-name "$(BBL_ENV_NAME)-bbl"
